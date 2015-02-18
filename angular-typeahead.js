@@ -9,6 +9,8 @@ angular.module('siyfion.sfTypeahead', [])
         suggestionKey : '@'
       },
       link: function (scope, element, attrs, ngModel) {
+        //TODO :: Figure out why angular doesn't detect Jquery
+        var element = $(element),
         var options = scope.options || {},
             datasets = (angular.isArray(scope.datasets) ? scope.datasets : [scope.datasets]) || [], // normalize to array
             init = true;
